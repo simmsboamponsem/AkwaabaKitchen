@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Akwaaba Kitchen - Authentic Ghanaian Restaurant serving traditional meals with love. Order Jollof Rice, Banku, Fufu, and more!">
+    <title>Akwaaba Kitchen | Authentic Ghanaian Restaurant</title>
+    <!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ============================================
+         NAVIGATION BAR
+    ============================================= -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <!-- Logo -->
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">🍲</span>
+                <span class="logo-text">Akwaaba Kitchen</span>
+            </a>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            
+            <!-- Navigation Links -->
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#menu" class="nav-link">
+                        <i class="fas fa-utensils"></i> Menu
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="order.html" class="nav-link">
+                        <i class="fas fa-shopping-cart"></i> Order
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                </li>
+                <li class="nav-item">
+                        <a href="quiz.html" class="nav-link">
+                            <i class="fas fa-gamepad"></i> Food Quiz
+                        </a>
+                    </li>
+                <li class="nav-item nav-cta">
+                    <a href="order.html" class="btn btn-primary btn-sm">
+                        Order Now
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION
+    ============================================= -->
+    <header class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-badge">🇬🇭 Authentic Ghanaian Cuisine</span>
+            <h1 class="hero-title">
+                Welcome to <span class="highlight">Akwaaba Kitchen</span>
+            </h1>
+            <p class="hero-subtitle">
+                Experience the rich flavors of Ghana with our traditional home-cooked meals. 
+                From Jollof Rice to Banku & Tilapia, we bring the taste of Ghana to your table.
+            </p>
+            <div class="hero-buttons">
+                <a href="order.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-shopping-cart"></i> Order Now
+                </a>
+                <a href="#" class="btn btn-whatsapp btn-lg" id="heroWhatsAppBtn">
+                    <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">5000+</span>
+                    <span class="stat-label">Happy Customers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Menu Items</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">8+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <a href="#about" class="scroll-indicator">
+                <span>Scroll Down</span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- ============================================
+         ABOUT SECTION
+    ============================================= -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-images">
+                    <div class="about-img-main">
+                        <div class="img-placeholder food-img-1">
+                            <i class="fas fa-utensils"></i>
+                            <span>Traditional Cooking</span>
+                        </div>
+                    </div>
+                    <div class="about-img-secondary">
+                        <div class="img-placeholder food-img-2">
+                            <i class="fas fa-leaf"></i>
+                            <span>Fresh Ingredients</span>
+                        </div>
+                    </div>
+                    <div class="about-experience-badge">
+                        <span class="years">8+</span>
+                        <span class="text">Years of Excellence</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-badge">About Us</span>
+                    <h2 class="section-title">
+                        Authentic Ghanaian <span class="highlight">Home Cooking</span>
+                    </h2>
+                    <p class="about-text">
+                        At Akwaaba Kitchen, we believe in preserving the rich culinary heritage of Ghana. 
+                        Our dishes are prepared with love, using traditional recipes passed down through generations 
+                        and the freshest local ingredients sourced directly from Ghanaian markets.
+                    </p>
+                    <p class="about-text">
+                        Whether you're craving the smoky flavors of perfectly grilled Tilapia with Banku, 
+                        the aromatic spices of our famous Jollof Rice, or the comforting warmth of Fufu and Light Soup, 
+                        every dish is crafted to give you an authentic taste of home.
+                    </p>
+                    <ul class="about-features">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>100% Fresh Local Ingredients</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Traditional Family Recipes</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Fast Delivery Across Accra</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Hygienic Food Preparation</span>
+                        </li>
+                    </ul>
+                    <a href="#menu" class="btn btn-primary">
+                        <i class="fas fa-utensils"></i> View Our Menu
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FEATURED MENU SECTION
+    ============================================= -->
+    <section class="menu section" id="menu">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Our Menu</span>
+                <h2 class="section-title">
+                    Featured <span class="highlight">Ghanaian Dishes</span>
+                </h2>
+                <p class="section-subtitle">
+                    Explore our most popular authentic Ghanaian meals, prepared fresh daily with love and tradition.
+                </p>
+            </div>
+            
+            <!-- Menu Filter -->
+            <div class="menu-filter">
+                <button class="filter-btn active" data-filter="all">All Items</button>
+                <button class="filter-btn" data-filter="rice">Rice Dishes</button>
+                <button class="filter-btn" data-filter="local">Local Favorites</button>
+                <button class="filter-btn" data-filter="soup">Soups & Stews</button>
+            </div>
+            
+            <!-- Menu Grid -->
+            <div class="menu-grid">
+                <!-- Menu Item 1: Jollof Rice & Chicken -->
+                <div class="menu-card" data-category="rice">
+                    <div class="menu-card-image">
+                        <div class="menu-card-image">
+    <img src="assets/images/jollof.jpg" alt="Jollof Rice & Chicken" class="menu-img">
+    <span class="menu-badge bestseller">Bestseller</span>
+    ...
+</div>
+                        <span class="menu-badge bestseller">Bestseller</span>
+                        <div class="menu-overlay">
+                            <a href="order.html?item=jollof" class="btn btn-primary btn-sm">
+                                <i class="fas fa-cart-plus"></i> Order Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3 class="menu-name">Jollof Rice & Chicken</h3>
+                            <span class="menu-price">GHS 45</span>
+                        </div>
+                        <p class="menu-description">
+                            Ghana's famous party rice with perfectly spiced tomato sauce, served with crispy fried chicken.
+                        </p>
+                        <div class="menu-meta">
+                            <span class="menu-rating">
+                                <i class="fas fa-star"></i> 4.9
+                            </span>
+                            <span class="menu-time">
+                                <i class="fas fa-clock"></i> 25-30 mins
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 2: Banku & Tilapia -->
+                <div class="menu-card" data-category="local">
+                    <div class="menu-card-image">
+                        <div class="menu-card-image">
+    <img src="assets/images/banku.jpg" alt="Jollof Rice & Chicken" class="menu-img">
+    <span class="menu-badge bestseller">Bestseller</span>
+    ...
+</div>
+                        <span class="menu-badge popular">Popular</span>
+                        <div class="menu-overlay">
+                            <a href="order.html?item=banku" class="btn btn-primary btn-sm">
+                                <i class="fas fa-cart-plus"></i> Order Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3 class="menu-name">Banku & Tilapia</h3>
+                            <span class="menu-price">GHS 65</span>
+                        </div>
+                        <p class="menu-description">
+                            Soft fermented corn dough served with grilled tilapia, pepper sauce, and fresh vegetables.
+                        </p>
+                        <div class="menu-meta">
+                            <span class="menu-rating">
+                                <i class="fas fa-star"></i> 4.8
+                            </span>
+                            <span class="menu-time">
+                                <i class="fas fa-clock"></i> 30-35 mins
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 3: Fufu & Light Soup -->
+                <div class="menu-card" data-category="soup">
+                    <div class="menu-card-image">
+                        <div class="menu-card-image">
+    <img src="assets/images/fufu.jpg" alt="Jollof Rice & Chicken" class="menu-img">
+    <span class="menu-badge bestseller">Bestseller</span>
+    ...
+</div>
+                        <span class="menu-badge traditional">Traditional</span>
+                        <div class="menu-overlay">
+                            <a href="order.html?item=fufu" class="btn btn-primary btn-sm">
+                                <i class="fas fa-cart-plus"></i> Order Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3 class="menu-name">Fufu & Light Soup</h3>
+                            <span class="menu-price">GHS 50</span>
+                        </div>
+                        <p class="menu-description">
+                            Smooth pounded cassava and plantain served with aromatic palm nut or groundnut soup with meat.
+                        </p>
+                        <div class="menu-meta">
+                            <span class="menu-rating">
+                                <i class="fas fa-star"></i> 4.9
+                            </span>
+                            <span class="menu-time">
+                                <i class="fas fa-clock"></i> 25-30 mins
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 4: Waakye -->
+                <div class="menu-card" data-category="local">
+                    <div class="menu-card-image">
+                        <div class="menu-card-image">
+    <img src="assets/images/waakye.jpeg" alt="Jollof Rice & Chicken" class="menu-img">
+    <span class="menu-badge bestseller">Bestseller</span>
+    ...
+</div>
+                        <span class="menu-badge bestseller">Bestseller</span>
+                        <div class="menu-overlay">
+                            <a href="order.html?item=waakye" class="btn btn-primary btn-sm">
+                                <i class="fas fa-cart-plus"></i> Order Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3 class="menu-name">Waakye Special</h3>
+                            <span class="menu-price">GHS 35</span>
+                        </div>
+                        <p class="menu-description">
+                            Rice and beans cooked with millet leaves, served with spaghetti, gari, shito, and protein.
+                        </p>
+                        <div class="menu-meta">
+                            <span class="menu-rating">
+                                <i class="fas fa-star"></i> 4.7
+                            </span>
+                            <span class="menu-time">
+                                <i class="fas fa-clock"></i> 20-25 mins
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 5: Fried Rice & Chicken -->
+                <div class="menu-card" data-category="rice">
+                    <div class="menu-card-image">
+                        <div class="menu-card-image">
+    <img src="assets/images/friedrice.jpg" alt="Jollof Rice & Chicken" class="menu-img">
+    <span class="menu-badge bestseller">Bestseller</span>
+    ...
+</div>
+                        <div class="menu-overlay">
+                            <a href="order.html?item=fried-rice" class="btn btn-primary btn-sm">
+                                <i class="fas fa-cart-plus"></i> Order Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3 class="menu-name">Fried Rice & Chicken</h3>
+                            <span class="menu-price">GHS 50</span>
+                        </div>
+                        <p class="menu-description">
+                            Stir-fried rice with vegetables, egg, and your choice of crispy or grilled chicken.
+                        </p>
+                        <div class="menu-meta">
+                            <span class="menu-rating">
+                                <i class="fas fa-star"></i> 4.6
+                            </span>
+                            <span class="menu-time">
+                                <i class="fas fa-clock"></i> 20-25 mins
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 6: Kelewele -->
+                <div class="menu-card" data-category="local">
+                    <div class="menu-card-image">
+                        <div class="menu-card-image">
+    <img src="assets/images/kelewele.jpg" alt="Jollof Rice & Chicken" class="menu-img">
+    <span class="menu-badge bestseller">Bestseller</span>
+    ...
+</div>
+                        <span class="menu-badge spicy">Spicy</span>
+                        <div class="menu-overlay">
+                            <a href="order.html?item=kelewele" class="btn btn-primary btn-sm">
+                                <i class="fas fa-cart-plus"></i> Order Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3 class="menu-name">Kelewele</h3>
+                            <span class="menu-price">GHS 20</span>
+                        </div>
+                        <p class="menu-description">
+                            Spiced fried plantain cubes seasoned with ginger, pepper, and African spices. Perfect snack!
+                        </p>
+                        <div class="menu-meta">
+                            <span class="menu-rating">
+                                <i class="fas fa-star"></i> 4.8
+                            </span>
+                            <span class="menu-time">
+                                <i class="fas fa-clock"></i> 15-20 mins
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 7: Goat Soup -->
+                <div class="menu-card" data-category="soup">
+                    <div class="menu-card-image">
+                        <div class="menu-card-image">
+    <img src="assets/images/goat.jpg" alt="Jollof Rice & Chicken" class="menu-img">
+    <span class="menu-badge bestseller">Bestseller</span>
+    ...
+</div>
+                        <span class="menu-badge premium">Premium</span>
+                        <div class="menu-overlay">
+                            <a href="order.html?item=goat-soup" class="btn btn-primary btn-sm">
+                                <i class="fas fa-cart-plus"></i> Order Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3 class="menu-name">Goat Soup (Aponkye)</h3>
+                            <span class="menu-price">GHS 60</span>
+                        </div>
+                        <p class="menu-description">
+                            Rich and flavorful goat meat soup prepared with traditional Ghanaian spices and herbs.
+                        </p>
+                        <div class="menu-meta">
+                            <span class="menu-rating">
+                                <i class="fas fa-star"></i> 4.9
+                            </span>
+                            <span class="menu-time">
+                                <i class="fas fa-clock"></i> 30-35 mins
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 8: GaBeans Special -->
+                <div class="menu-card" data-category="rice">
+                    <div class="menu-card-image">
+                        <div class="menu-card-image">
+    <img src="assets/images/g3.jpg" alt="GaBeans" class="menu-img">
+    <span class="menu-badge bestseller">Bestseller</span>
+    ...
+</div>
+                        <div class="menu-overlay">
+                            <a href="order.html?item=gabeans" class="btn btn-primary btn-sm">
+                                <i class="fas fa-cart-plus"></i> Order Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3 class="menu-name">GaBeans Special</h3>
+                            <span class="menu-price">GHS 35</span>
+                        </div>
+                        <p class="menu-description">
+                            Soft boiled beans with rich flavorful natural palm oil, enjoyed with gari, plantain and protein.
+                        </p>
+                        <div class="menu-meta">
+                            <span class="menu-rating">
+                                <i class="fas fa-star"></i> 5.7
+                            </span>
+                            <span class="menu-time">
+                                <i class="fas fa-clock"></i> 20-25 mins
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 9: Plain Rice & Stew -->
+                <div class="menu-card" data-category="rice">
+                    <div class="menu-card-image">
+                        <div class="menu-card-image">
+    <img src="assets/images/rice.jpg" alt="Jollof Rice & Chicken" class="menu-img">
+    <span class="menu-badge bestseller">Bestseller</span>
+    ...
+</div>
+                        <div class="menu-overlay">
+                            <a href="order.html?item=plain-rice" class="btn btn-primary btn-sm">
+                                <i class="fas fa-cart-plus"></i> Order Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3 class="menu-name">Plain Rice & Stew</h3>
+                            <span class="menu-price">GHS 30</span>
+                        </div>
+                        <p class="menu-description">
+                            Fluffy white rice served with rich tomato stew and your choice of protein (fish, chicken, or beef).
+                        </p>
+                        <div class="menu-meta">
+                            <span class="menu-rating">
+                                <i class="fas fa-star"></i> 4.5
+                            </span>
+                            <span class="menu-time">
+                                <i class="fas fa-clock"></i> 20-25 mins
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+              
+
+            <!-- View All Menu Button -->
+            <div class="text-center mt-4">
+                <a href="order.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-utensils"></i> View Full Menu & Order
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         WHY CHOOSE US SECTION
+    ============================================= -->
+    <section class="features section" id="features">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Why Choose Us</span>
+                <h2 class="section-title">
+                    The <span class="highlight">Akwaaba</span> Difference
+                </h2>
+                <p class="section-subtitle">
+                    We take pride in serving authentic Ghanaian cuisine with exceptional service.
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="feature-title">Fresh Ingredients</h3>
+                    <p class="feature-description">
+                        We source the freshest local ingredients from Makola and Madina markets daily.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="feature-title">Fast Delivery</h3>
+                    <p class="feature-description">
+                        Quick delivery across Accra, Tema, Madina, East Legon, and surrounding areas.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h3 class="feature-title">Hygienic Preparation</h3>
+                    <p class="feature-description">
+                        Our kitchen maintains the highest standards of cleanliness and food safety.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3 class="feature-title">Affordable Prices</h3>
+                    <p class="feature-description">
+                        Quality Ghanaian food at prices that won't break the bank. Value for money!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         TESTIMONIALS SECTION
+    ============================================= -->
+    <section class="testimonials section" id="testimonials">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Testimonials</span>
+                <h2 class="section-title">
+                    What Our <span class="highlight">Customers</span> Say
+                </h2>
+                <p class="section-subtitle">
+                    Don't just take our word for it - hear from our satisfied customers!
+                </p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "The Jollof Rice here is absolutely amazing! It reminds me of my grandmother's cooking. 
+                        Fast delivery to East Legon and the food was still hot. Highly recommended!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <span>KA</span>
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name">Kofi Asante</h4>
+                            <span class="author-location">East Legon, Accra</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Best Banku and Tilapia in Accra! The fish was perfectly grilled and the pepper sauce 
+                        was on point. Will definitely order again. Thank you Akwaaba Kitchen!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <span>AA</span>
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name">Abena Amoah</h4>
+                            <span class="author-location">Madina, Accra</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Ordered Waakye for a family gathering and everyone loved it! Great portions, 
+                        excellent taste, and very affordable. The WhatsApp ordering was super convenient."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <span>YM</span>
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name">Yaw Mensah</h4>
+                            <span class="author-location">Tema, Ghana</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "The Fufu and Light Soup brought tears to my eyes! It tasted exactly like home. 
+                        As a Ghanaian living abroad visiting home, this was the highlight of my trip!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <span>EA</span>
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name">Efua Addo</h4>
+                            <span class="author-location">Osu, Accra</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "I'm addicted to their Kelewele! Perfectly spiced and always crispy. 
+                        My go-to snack when I'm craving something tasty. The Paystack payment is seamless."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <span>NK</span>
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name">Nana Kwame</h4>
+                            <span class="author-location">Spintex, Accra</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Ordered for my office lunch and my colleagues couldn't stop talking about the Fried Rice. 
+                        Quality food, generous portions, and the delivery guy was very polite. 5 stars!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <span>FO</span>
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name">Feli Owusu</h4>
+                            <span class="author-location">Airport City, Accra</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CTA SECTION
+    ============================================= -->
+    <section class="cta section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2 class="cta-title">Ready to Taste Ghana?</h2>
+                    <p class="cta-subtitle">
+                        Order your favorite Ghanaian meal now and experience the authentic flavors of home!
+                    </p>
+                </div>
+                <div class="cta-buttons">
+                    <a href="order.html" class="btn btn-light btn-lg">
+                        <i class="fas fa-shopping-cart"></i> Order Online
+                    </a>
+                    <a href="#" class="btn btn-outline-light btn-lg" id="ctaWhatsAppBtn">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+    ============================================= -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Footer Brand -->
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-icon">🍲</span>
+                        <span class="logo-text">Akwaaba Kitchen</span>
+                    </a>
+                    <p class="footer-description">
+                        Bringing the authentic taste of Ghana to your doorstep. 
+                        Quality Ghanaian cuisine made with love and tradition.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link whatsapp" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#menu">Our Menu</a></li>
+                        <li><a href="order.html">Order Food</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Popular Items -->
+                <div class="footer-links">
+                    <h4 class="footer-title">Popular Items</h4>
+                    <ul class="footer-menu">
+                        <li><a href="order.html?item=jollof">Jollof Rice</a></li>
+                        <li><a href="order.html?item=banku">Banku & Tilapia</a></li>
+                        <li><a href="order.html?item=fufu">Fufu & Light Soup</a></li>
+                        <li><a href="order.html?item=waakye">Waakye Special</a></li>
+                        <li><a href="order.html?item=kelewele">Kelewele</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-contact">
+                    <h4 class="footer-title">Contact Us</h4>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Osu Oxford Street<br>Accra, Ghana</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+233240000000">+233 544871758</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/233240000000" target="_blank">+233 544871758</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@akwaabakitchen.com">info@akwaabakitchen.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Sun: 7:00 AM - 10:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="copyright">
+                    &copy; <span id="currentYear"></span> Akwaaba Kitchen. All Rights Reserved. 
+                    Made with ❤️ in Ghana 🇬🇭
+                </p>
+                <div class="payment-methods">
+                    <span>We Accept:</span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Visa_Logo.svg/200px-Visa_Logo.svg.png" alt="Visa" class="payment-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/200px-Mastercard-logo.svg.png" alt="Mastercard" class="payment-icon">
+                    <span class="payment-text">Mobile Money</span>
+                    <span class="payment-text">Paystack</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         FLOATING WHATSAPP BUTTON
+    ============================================= -->
+    <a href="#" class="whatsapp-float" id="whatsappFloat" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Chat with us!</span>
+    </a>
+
+    <!-- ============================================
+         TOAST NOTIFICATION CONTAINER
+    ============================================= -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ============================================
+         SCRIPTS
+    ============================================= -->
+    <script src="js/main.js"></script>
+    <script src="js/whatsapp.js"></script>
+</body>
+</html>

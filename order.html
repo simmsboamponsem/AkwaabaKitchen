@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Order delicious Ghanaian food from Akwaaba Kitchen. Fast delivery, multiple payment options including Paystack and Mobile Money.">
+    <title>Order Food | Akwaaba Kitchen - Ghanaian Restaurant</title>
+    <!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Paystack Inline Script -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ============================================
+         NAVIGATION BAR
+    ============================================= -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">🍲</span>
+                <span class="logo-text">Akwaaba Kitchen</span>
+            </a>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#menu" class="nav-link">
+                        <i class="fas fa-utensils"></i> Menu
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="order.html" class="nav-link active">
+                        <i class="fas fa-shopping-cart"></i> Order
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         PAGE HEADER
+    ============================================= -->
+    <header class="page-header">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="separator">/</span>
+                <span class="current">Order Food</span>
+            </nav>
+            <h1 class="page-title">
+                <i class="fas fa-shopping-cart"></i> Place Your Order
+            </h1>
+            <p class="page-subtitle">
+                Order your favorite Ghanaian meals for delivery or pickup. 
+                Multiple payment options available!
+            </p>
+        </div>
+    </header>
+
+    <!-- ============================================
+         ORDER SECTION
+    ============================================= -->
+    <section class="order-section section">
+        <div class="container">
+            <div class="order-grid">
+                <!-- Order Form -->
+                <div class="order-form-container">
+                    <div class="form-header">
+                        <h2><i class="fas fa-clipboard-list"></i> Order Details</h2>
+                        <p>Fill in your details and select your meal</p>
+                    </div>
+                    
+                    <form class="order-form" id="orderForm" novalidate>
+                        <!-- Personal Information -->
+                        <div class="form-section">
+                            <h3 class="form-section-title">
+                                <i class="fas fa-user"></i> Personal Information
+                            </h3>
+                            
+                            <div class="form-group">
+                                <label for="fullName" class="form-label">
+                                    Full Name <span class="required">*</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-user input-icon"></i>
+                                    <input 
+                                        type="text" 
+                                        id="fullName" 
+                                        name="fullName" 
+                                        class="form-input" 
+                                        placeholder="e.g., Kofi Mensah"
+                                        required
+                                        autocomplete="name"
+                                    >
+                                </div>
+                                <span class="error-message" id="fullNameError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phoneNumber" class="form-label">
+                                    Phone Number <span class="required">*</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-phone input-icon"></i>
+                                    <input 
+                                        type="tel" 
+                                        id="phoneNumber" 
+                                        name="phoneNumber" 
+                                        class="form-input" 
+                                        placeholder="e.g., 0241234567 or +233241234567"
+                                        required
+                                        autocomplete="tel"
+                                    >
+                                </div>
+                                <span class="input-hint">Ghana format: +233XXXXXXXXX or 0XXXXXXXXX</span>
+                                <span class="error-message" id="phoneNumberError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">
+                                    Email Address 
+                                </label>
+                                <div class="input-text">
+                                    <i class="fas fa-envelope input-icon"></i>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        name="email" 
+                                        class="form-input" 
+                                        placeholder="e.g., kofi@email.com"
+                                        required
+                                        autocomplete="email"
+                                    >
+                                </div>
+                                <span class="input-hint">Required for payment receipt</span>
+                                <span class="error-message" id="emailError"></span>
+                            </div>
+                        </div>
+
+                        <!-- Delivery Information -->
+                        <div class="form-section">
+                            <h3 class="form-section-title">
+                                <i class="fas fa-map-marker-alt"></i> Delivery Information
+                            </h3>
+                            
+                            <div class="form-group">
+                                <label for="deliveryLocation" class="form-label">
+                                    Delivery Area <span class="required">*</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-map-marker-alt input-icon"></i>
+                                    <select id="deliveryLocation" name="deliveryLocation" class="form-input form-select" required>
+                                        <option value="">-- Select your delivery area --</option>
+                                        <optgroup label="Greater Accra">
+                                            <option value="Accra Central">Accra Central (GHS 10)</option>
+                                            <option value="Osu">Osu (GHS 10)</option>
+                                            <option value="East Legon">East Legon (GHS 10)</option>
+                                            <option value="Madina">Madina (GHS 10)</option>
+                                            <option value="Spintex">Spintex (GHS 10)</option>
+                                            <option value="Dansoman">Dansoman (GHS 10)</option>
+                                            <option value="Lapaz">Lapaz (GHS 10)</option>
+                                            <option value="Achimota">Achimota (GHS 10)</option>
+                                            <option value="Airport City">Airport City (GHS 10)</option>
+                                            <option value="Cantonments">Cantonments (GHS 10)</option>
+                                        </optgroup>
+                                        <optgroup label="Tema">
+                                            <option value="Tema Community 1">Tema Community 1 (GHS 15)</option>
+                                            <option value="Tema Community 25">Tema Community 25 (GHS 15)</option>
+                                            <option value="Tema New Town">Tema New Town (GHS 15)</option>
+                                        </optgroup>
+                                        <optgroup label="Other Regions">
+                                            <option value="Kumasi">Kumasi (GHS 30 - Special Delivery)</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <span class="error-message" id="deliveryLocationError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="deliveryAddress" class="form-label">
+                                    Detailed Address <span class="required">*</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-home input-icon"></i>
+                                    <input 
+                                        type="text" 
+                                        id="deliveryAddress" 
+                                        name="deliveryAddress" 
+                                        class="form-input" 
+                                        placeholder="e.g., House 15, Street Name, Near Landmark"
+                                        required
+                                        autocomplete="street-address"
+                                    >
+                                </div>
+                                <span class="input-hint">Include house number, street name, and nearest landmark</span>
+                                <span class="error-message" id="deliveryAddressError"></span>
+                            </div>
+                        </div>
+
+                        <!-- Order Details -->
+                        <div class="form-section">
+                            <h3 class="form-section-title">
+                                <i class="fas fa-utensils"></i> Your Order
+                            </h3>
+                            
+                            <div class="form-group">
+                                <label for="foodChoice" class="form-label">
+                                    Select Your Meal <span class="required">*</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-drumstick-bite input-icon"></i>
+                                    <select id="foodChoice" name="foodChoice" class="form-input form-select" required>
+                                        <option value="">-- Choose your meal --</option>
+                                        <optgroup label="🍚 Rice Dishes">
+                                            <option value="jollof" data-price="45">Jollof Rice & Chicken - GHS 45</option>
+                                            <option value="fried-rice" data-price="50">Fried Rice & Chicken - GHS 50</option>
+                                            <option value="plain-rice" data-price="30">Plain Rice & Stew - GHS 30</option>
+                                        </optgroup>
+                                        <optgroup label="🍲 Traditional Dishes">
+                                            <option value="banku" data-price="65">Banku & Tilapia - GHS 65</option>
+                                            <option value="fufu" data-price="50">Fufu & Light Soup - GHS 50</option>
+                                            <option value="waakye" data-price="35">Waakye Special - GHS 35</option>
+                                            <option value="gabeans" data-price="35">GaBeans Special - GHS 35</option>
+                                        </optgroup>
+                                        <optgroup label="🥘 Soups & Others">
+                                            <option value="goat-soup" data-price="60">Goat Soup (Aponkye) - GHS 60</option>
+                                            <option value="kelewele" data-price="20">Kelewele - GHS 20</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <span class="error-message" id="foodChoiceError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="quantity" class="form-label">
+                                    Quantity <span class="required">*</span>
+                                </label>
+                                <div class="quantity-selector">
+                                    <button type="button" class="qty-btn minus" id="qtyMinus" aria-label="Decrease quantity">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <input 
+                                        type="number" 
+                                        id="quantity" 
+                                        name="quantity" 
+                                        class="form-input qty-input" 
+                                        value="1" 
+                                        min="1" 
+                                        max="20"
+                                        required
+                                        readonly
+                                    >
+                                    <button type="button" class="qty-btn plus" id="qtyPlus" aria-label="Increase quantity">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                                <span class="error-message" id="quantityError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="orderNotes" class="form-label">
+                                    Special Instructions (Optional)
+                                </label>
+                                <div class="input-wrapper textarea-wrapper">
+                                    <i class="fas fa-sticky-note input-icon"></i>
+                                    <textarea 
+                                        id="orderNotes" 
+                                        name="orderNotes" 
+                                        class="form-input form-textarea" 
+                                        placeholder="e.g., Extra pepper please, No onions, Extra meat..."
+                                        rows="3"
+                                    ></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Options -->
+                        <div class="form-section">
+                            <h3 class="form-section-title">
+                                <i class="fas fa-credit-card"></i> Payment Method
+                            </h3>
+                            
+                            <div class="payment-options">
+                                <label class="payment-option">
+                                    <input type="radio" name="paymentMethod" value="delivery" checked>
+                                    <div class="payment-option-content">
+                                        <div class="payment-icon delivery-icon">
+                                            <i class="fas fa-money-bill-wave"></i>
+                                        </div>
+                                        <div class="payment-info">
+                                            <span class="payment-title">Pay on Delivery</span>
+                                            <span class="payment-desc">Pay with Cash or Mobile Money when your food arrives</span>
+                                        </div>
+                                        <div class="payment-check">
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="payment-option">
+                                    <input type="radio" name="paymentMethod" value="paystack">
+                                    <div class="payment-option-content">
+                                        <div class="payment-icon paystack-icon">
+                                            <i class="fas fa-lock"></i>
+                                        </div>
+                                        <div class="payment-info">
+                                            <span class="payment-title">Pay Online (Paystack)</span>
+                                            <span class="payment-desc">Secure payment with Visa, Mastercard, or Mobile Money</span>
+                                        </div>
+                                        <div class="payment-check">
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="payment-option">
+                                    <input type="radio" name="paymentMethod" value="whatsapp">
+                                    <div class="payment-option-content">
+                                        <div class="payment-icon whatsapp-icon">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </div>
+                                        <div class="payment-info">
+                                            <span class="payment-title">Order via WhatsApp</span>
+                                            <span class="payment-desc">Chat with us directly to complete your order</span>
+                                        </div>
+                                        <div class="payment-check">
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block" id="submitOrderBtn">
+                                <i class="fas fa-check-circle"></i>
+                                <span id="submitBtnText">Place Order - Pay on Delivery</span>
+                            </button>
+                            <p class="form-disclaimer">
+                                <i class="fas fa-shield-alt"></i>
+                                Your information is secure and will only be used to process your order.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Order Summary Sidebar -->
+                <div class="order-summary-container">
+                    <div class="order-summary" id="orderSummary">
+                        <div class="summary-header">
+                            <h3><i class="fas fa-receipt"></i> Order Summary</h3>
+                        </div>
+                        
+                        <div class="summary-content">
+                            <!-- Empty State -->
+                            <div class="summary-empty" id="summaryEmpty">
+                                <div class="empty-icon">
+                                    <i class="fas fa-shopping-basket"></i>
+                                </div>
+                                <p>Your cart is empty</p>
+                                <span>Select a meal to see your order summary</span>
+                            </div>
+
+                            <!-- Order Details (Hidden initially) -->
+                            <div class="summary-details" id="summaryDetails">
+                                <div class="summary-item-card" id="summaryItemCard">
+                                    <div class="item-icon">🍽️</div>
+                                    <div class="item-details">
+                                        <span class="item-name" id="summaryFood">-</span>
+                                        <span class="item-qty">Qty: <span id="summaryQty">1</span></span>
+                                    </div>
+                                    <span class="item-price" id="summaryUnitPrice">GHS 0</span>
+                                </div>
+
+                                <div class="summary-breakdown">
+                                    <div class="summary-row">
+                                        <span class="row-label">Subtotal</span>
+                                        <span class="row-value" id="summarySubtotal">GHS 0</span>
+                                    </div>
+                                    <div class="summary-row">
+                                        <span class="row-label">Delivery Fee</span>
+                                        <span class="row-value" id="summaryDelivery">GHS 10</span>
+                                    </div>
+                                    <div class="summary-row total">
+                                        <span class="row-label">Total</span>
+                                        <span class="row-value" id="summaryTotal">GHS 0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Delivery Info -->
+                        <div class="summary-info">
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Estimated Delivery: 30-45 mins</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Secure & Safe Payments</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-headset"></i>
+                                <span>24/7 Customer Support</span>
+                            </div>
+                        </div>
+
+                        <!-- Help Section -->
+                        <div class="summary-help">
+                            <p>Need help with your order?</p>
+                            <a href="https://wa.me/233544871758" target="_blank" class="btn btn-whatsapp btn-sm btn-block">
+                                <i class="fab fa-whatsapp"></i> Chat with Us on WhatsApp
+                            </a>
+                            <a href="tel:+233544871758" class="btn btn-outline btn-sm btn-block">
+                                <i class="fas fa-phone"></i> Call: +233 544871758
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         ORDER SUCCESS MODAL
+    ============================================= -->
+    <div class="modal" id="orderSuccessModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close-btn" id="modalCloseX" aria-label="Close modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header success">
+                <div class="modal-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2 class="modal-title">Order Confirmed!</h2>
+            </div>
+            <div class="modal-body">
+                <p class="modal-message">
+                    Thank you for your order! 🎉<br>
+                    Your delicious Ghanaian meal is being prepared with love.
+                </p>
+                <div class="order-details-modal" id="orderDetailsModal">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+                <div class="delivery-info-modal">
+                    <i class="fas fa-truck"></i>
+                    <span>Expected delivery: 30-45 minutes</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="index.html" class="btn btn-primary">
+                    <i class="fas fa-home"></i> Back to Home
+                </a>
+                <button class="btn btn-outline" id="orderMoreBtn">
+                    <i class="fas fa-plus"></i> Order More
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         FOOTER
+    ============================================= -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-simple">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-icon">🍲</span>
+                        <span class="logo-text">Akwaaba Kitchen</span>
+                    </a>
+                    <p>Authentic Ghanaian Cuisine</p>
+                </div>
+                <div class="footer-contact-simple">
+                    <a href="tel:+233240000000"><i class="fas fa-phone"></i> +233 544871758</a>
+                    <a href="https://wa.me/233544871758"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="mailto:info@akwaabakitchen.com"><i class="fas fa-envelope"></i> Email</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">
+                    &copy; <span id="currentYear">2024</span> Akwaaba Kitchen. Made with ❤️ in Ghana 🇬🇭
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         FLOATING WHATSAPP BUTTON
+    ============================================= -->
+    <a href="https://wa.me/233544871758?text=Hello!%20I%20would%20like%20to%20place%20an%20order." 
+       class="whatsapp-float" 
+       id="whatsappFloat" 
+       target="_blank"
+       aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Need help? Chat with us!</span>
+    </a>
+
+    <!-- ============================================
+         TOAST NOTIFICATION CONTAINER
+    ============================================= -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ============================================
+         SCRIPTS
+    ============================================= -->
+    <script src="js/main.js"></script>
+    <script src="js/whatsapp.js"></script>
+    <script src="js/paystack.js"></script>
+    <script src="js/order.js"></script>
+</body>
+</html>

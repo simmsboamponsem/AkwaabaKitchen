@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Take our fun quiz to discover which Ghanaian dish matches your personality!">
+    <title>Food Quiz | Akwaaba Kitchen</title>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .page-transition {
+            position: fixed; inset: 0;
+            background: linear-gradient(135deg, #CE1126 0%, #006B3F 100%);
+            z-index: 99999; display: flex; align-items: center; justify-content: center;
+            opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .page-transition.active { opacity: 1; visibility: visible; }
+        .page-transition .loader { text-align: center; color: white; }
+        .page-transition .loader-icon { font-size: 3rem; animation: bounce 0.6s infinite alternate; }
+        @keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-15px); } }
+        .page-content { opacity: 0; animation: fadeInPage 0.5s ease forwards; animation-delay: 0.1s; }
+        @keyframes fadeInPage { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+    <!-- Page Transition -->
+    <div class="page-transition" id="pageTransition">
+        <div class="loader">
+            <div class="loader-icon">🎮</div>
+            <p>Loading Quiz...</p>
+        </div>
+    </div>
+
+    <div class="page-content">
+        <!-- Navigation -->
+        <nav class="navbar scrolled" id="navbar">
+            <div class="container nav-container">
+                <a href="index.html" class="nav-logo">
+                    <span class="logo-icon">🍲</span>
+                    <span class="logo-text">Akwaaba Kitchen</span>
+                </a>
+                
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#menu" class="nav-link"><i class="fas fa-utensils"></i> Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="order.html" class="nav-link"><i class="fas fa-shopping-bag"></i> Order</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="quiz.html" class="nav-link active"><i class="fas fa-gamepad"></i> Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Page Header -->
+        <header class="page-header quiz-header">
+            <div class="container">
+                <h1 class="page-title">
+                    <i class="fas fa-gamepad"></i> Which Ghanaian Dish Are You?
+                </h1>
+                <p class="page-subtitle">
+                    Answer a few fun questions to discover which traditional Ghanaian dish matches your personality!
+                </p>
+            </div>
+        </header>
+
+        <!-- Quiz Section -->
+        <section class="quiz-section section">
+            <div class="container">
+                <div class="quiz-container">
+                    <!-- Quiz Start Screen -->
+                    <div class="quiz-start" id="quizStart">
+                        <div class="quiz-start-content">
+                            <div class="quiz-start-icon">🍲</div>
+                            <h2>Ready to Discover Your Dish?</h2>
+                            <p>This fun quiz will reveal which Ghanaian dish best represents your personality!</p>
+                            <ul class="quiz-info">
+                                <li><i class="fas fa-clock"></i> Takes only 2 minutes</li>
+                                <li><i class="fas fa-question-circle"></i> 6 fun questions</li>
+                                <li><i class="fas fa-utensils"></i> Discover your dish match</li>
+                            </ul>
+                            <button class="btn btn-primary btn-lg" id="startQuizBtn">
+                                <i class="fas fa-play"></i> Start Quiz
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Questions -->
+                    <div class="quiz-questions" id="quizQuestions" style="display: none;">
+                        <!-- Progress Bar -->
+                        <div class="quiz-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                            <span class="progress-text">Question <span id="currentQuestion">1</span> of <span id="totalQuestions">6</span></span>
+                        </div>
+
+                        <!-- Question Container -->
+                        <div class="question-container" id="questionContainer">
+                            <!-- Questions will be loaded here -->
+                        </div>
+
+                        <!-- Navigation -->
+                        <div class="quiz-nav">
+                            <button class="btn btn-outline" id="prevBtn" disabled>
+                                <i class="fas fa-arrow-left"></i> Previous
+                            </button>
+                            <button class="btn btn-primary" id="nextBtn" disabled>
+                                Next <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Result -->
+                    <div class="quiz-result" id="quizResult" style="display: none;">
+                        <div class="result-content">
+                            <div class="result-confetti" id="confetti"></div>
+                            <h2>You Are...</h2>
+                            <div class="result-dish" id="resultDish">
+                                <div class="dish-emoji" id="dishEmoji">🍚</div>
+                                <h3 id="dishName">Jollof Rice</h3>
+                                <p class="dish-tagline" id="dishTagline">The Life of the Party!</p>
+                            </div>
+                            <p class="result-description" id="resultDescription">
+                                Just like Ghana's famous Jollof Rice, you're the center of attention wherever you go!
+                            </p>
+                            <div class="result-traits" id="resultTraits">
+                                <!-- Traits will be loaded here -->
+                            </div>
+                            <div class="result-actions">
+                                <a href="order.html" class="btn btn-primary btn-lg" id="orderDishBtn">
+                                    <i class="fas fa-shopping-bag"></i> Order <span id="orderDishName">Jollof Rice</span> Now!
+                                </a>
+                                <button class="btn btn-outline btn-lg" id="retakeQuizBtn">
+                                    <i class="fas fa-redo"></i> Retake Quiz
+                                </button>
+                                <button class="btn btn-secondary btn-lg" id="shareResultBtn">
+                                    <i class="fas fa-share-alt"></i> Share Result
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-simple">
+                    <div class="footer-brand">
+                        <a href="index.html" class="footer-logo">
+                            <span class="logo-icon">🍲</span>
+                            <span class="logo-text">Akwaaba Kitchen</span>
+                        </a>
+                        <p>Authentic Ghanaian Cuisine</p>
+                    </div>
+                    <div class="footer-contact-simple">
+                        <a href="tel:+233544871758"><i class="fas fa-phone"></i> +233 54 487 1758</a>
+                        <a href="https://wa.me/233544871758"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="copyright">
+                        &copy; <span id="currentYear"></span> Akwaaba Kitchen. Made with ❤️ in Ghana 🇬🇭
+                    </p>
+                    <a href="admin/login.html" class="admin-link" title="Admin"><i class="fas fa-cog"></i></a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Floating Buttons -->
+        <a href="cart.html" class="cart-float" id="cartFloat">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-float-count" id="cartFloatCount">0</span>
+        </a>
+        <a href="https://wa.me/233544871758" class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <div class="toast-container" id="toastContainer"></div>
+    </div>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/cart.js" defer></script>
+    <script src="js/quiz.js" defer></script>
+</body>
+</html>

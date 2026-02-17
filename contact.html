@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Akwaaba Kitchen - Get in touch with us for orders, feedback, or inquiries. We're here to help!">
+    <title>Contact Us | Akwaaba Kitchen - Ghanaian Restaurant</title>
+    <!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Favicon -->
+     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    emailjs.init('Sq2Yn18fNF0AHa43R'); // ← Your Public Key
+</script>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ============================================
+         NAVIGATION BAR
+    ============================================= -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">🍲</span>
+                <span class="logo-text">Akwaaba Kitchen</span>
+            </a>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#menu" class="nav-link">
+                        <i class="fas fa-utensils"></i> Menu
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="order.html" class="nav-link">
+                        <i class="fas fa-shopping-cart"></i> Order
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link active">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                </li>
+                <li class="nav-item nav-cta">
+                    <a href="order.html" class="btn btn-primary btn-sm">
+                        Order Now
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         PAGE HEADER
+    ============================================= -->
+    <header class="page-header">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="separator">/</span>
+                <span class="current">Contact Us</span>
+            </nav>
+            <h1 class="page-title">
+                <i class="fas fa-envelope"></i> Contact Us
+            </h1>
+            <p class="page-subtitle">
+                Have questions, feedback, or need help with an order? We'd love to hear from you!
+            </p>
+        </div>
+    </header>
+
+    <!-- ============================================
+         CONTACT SECTION
+    ============================================= -->
+    <section class="contact-section section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info-container">
+                    <div class="contact-info-card">
+                        <h2 class="contact-info-title">
+                            <i class="fas fa-info-circle"></i> Get In Touch
+                        </h2>
+                        <p class="contact-info-text">
+                            We're here to help! Reach out to us through any of these channels.
+                        </p>
+
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="method-details">
+                                    <h4>Visit Us</h4>
+                                    <p>123 Osu Oxford Street<br>Accra, Ghana</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="method-details">
+                                    <h4>Call Us</h4>
+                                    <p><a href="tel:+233240000000">+233 544871758</a></p>
+                                    <p><a href="tel:+233200000000">+233 595323759</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-method">
+                                <div class="method-icon whatsapp-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div class="method-details">
+                                    <h4>WhatsApp</h4>
+                                    <p><a href="https://wa.me/233595323759" target="_blank">+233 595323759</a></p>
+                                    <span class="quick-response">Quick Response!</span>
+                                </div>
+                            </div>
+
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="method-details">
+                                    <h4>Email Us</h4>
+                                    <p><a href="mailto:akwaabakitchen101@gmail.com">akwaabakitchen101@gmail.com</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="method-details">
+                                    <h4>Business Hours (GMT)</h4>
+                                    <p>Monday - Friday: 7:00 AM - 10:00 PM</p>
+                                    <p>Saturday - Sunday: 8:00 AM - 11:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Media Links -->
+                        <div class="contact-social">
+                            <h4>Follow Us</h4>
+                            <div class="social-links">
+                                <a href="#" class="social-link" aria-label="Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="TikTok">
+                                    <i class="fab fa-tiktok"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <div class="contact-form-card">
+                        <h2 class="contact-form-title">
+                            <i class="fas fa-paper-plane"></i> Send Us a Message
+                        </h2>
+                        <p class="contact-form-subtitle">
+                            Fill out the form below and we'll get back to you as soon as possible.
+                        </p>
+
+                        <form class="contact-form" id="contactForm" novalidate>
+                            <div class="form-group">
+                                <label for="contactName" class="form-label">
+                                    Your Name <span class="required">*</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-user input-icon"></i>
+                                    <input 
+                                        type="text" 
+                                        id="contactName" 
+                                        name="contactName" 
+                                        class="form-input" 
+                                        placeholder="Enter your name"
+                                        required
+                                    >
+                                </div>
+                                <span class="error-message" id="contactNameError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactEmail" class="form-label">
+                                    Email Address <span class="required">*</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-envelope input-icon"></i>
+                                    <input 
+                                        type="email" 
+                                        id="contactEmail" 
+                                        name="contactEmail" 
+                                        class="form-input" 
+                                        placeholder="your.email@example.com"
+                                        required
+                                    >
+                                </div>
+                                <span class="error-message" id="contactEmailError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactSubject" class="form-label">
+                                    Subject
+                                </label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-tag input-icon"></i>
+                                    <select id="contactSubject" name="contactSubject" class="form-input form-select">
+                                        <option value="">Select a topic</option>
+                                        <option value="order">Order Inquiry</option>
+                                        <option value="feedback">Feedback</option>
+                                        <option value="complaint">Complaint</option>
+                                        <option value="partnership">Partnership</option>
+                                        <option value="catering">Catering Services</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactMessage" class="form-label">
+                                    Your Message <span class="required">*</span>
+                                </label>
+                                <div class="input-wrapper textarea-wrapper">
+                                    <i class="fas fa-comment input-icon"></i>
+                                    <textarea 
+                                        id="contactMessage" 
+                                        name="contactMessage" 
+                                        class="form-input form-textarea" 
+                                        placeholder="Type your message here..."
+                                        rows="5"
+                                        required
+                                    ></textarea>
+                                </div>
+                                <span class="error-message" id="contactMessageError"></span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg btn-block" id="submitContactBtn">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Send Message</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         LIVE CHAT SECTION
+    ============================================= -->
+    <section class="chat-section section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Live Chat</span>
+                <h2 class="section-title">
+                    Chat With <span class="highlight">Us</span>
+                </h2>
+                <p class="section-subtitle">
+                    Have a quick question? Use our live chat for instant responses!
+                </p>
+            </div>
+
+            <div class="chat-container">
+                <div class="chat-widget" id="chatWidget">
+                    <!-- Chat Header -->
+                    <div class="chat-header">
+                        <div class="chat-header-info">
+                            <div class="chat-avatar">
+                                <span>🍲</span>
+                                <span class="online-indicator"></span>
+                            </div>
+                            <div class="chat-title">
+                                <h4>Akwaaba Kitchen</h4>
+                                <span class="chat-status">Online - Ready to help!</span>
+                            </div>
+                        </div>
+                        <button class="chat-minimize" id="chatMinimize">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+
+                    <!-- Chat Messages -->
+                    <div class="chat-messages" id="chatMessages">
+                        <!-- Welcome Message -->
+                        <div class="chat-message received">
+                            <div class="message-avatar">🍲</div>
+                            <div class="message-content">
+                                <p>Akwaaba! 👋 Welcome to Akwaaba Kitchen.</p>
+                                <span class="message-time">Just now</span>
+                            </div>
+                        </div>
+                        <div class="chat-message received">
+                            <div class="message-avatar">🍲</div>
+                            <div class="message-content">
+                                <p>How can we help you today? Feel free to ask about our menu, delivery, or anything else!</p>
+                                <span class="message-time">Just now</span>
+                            </div>
+                        </div>
+
+                        <!-- Quick Replies -->
+                        <div class="quick-replies" id="quickReplies">
+                            <button class="quick-reply-btn" data-message="What are your popular dishes?">
+                                🍛 Popular Dishes
+                            </button>
+                            <button class="quick-reply-btn" data-message="What are your delivery areas?">
+                                🚚 Delivery Areas
+                            </button>
+                            <button class="quick-reply-btn" data-message="What payment methods do you accept?">
+                                💳 Payment Methods
+                            </button>
+                            <button class="quick-reply-btn" data-message="What are your business hours?">
+                                🕐 Business Hours
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Chat Input -->
+                    <div class="chat-input-container">
+                        <form class="chat-form" id="chatForm">
+                            <input 
+                                type="text" 
+                                class="chat-input" 
+                                id="chatInput" 
+                                placeholder="Type your message..."
+                                autocomplete="off"
+                            >
+                            <button type="submit" class="chat-send-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         MAP SECTION (PLACEHOLDER)
+    ============================================= -->
+    <section class="map-section">
+        <div class="map-placeholder">
+            <div class="map-overlay-content">
+                <i class="fas fa-map-marked-alt"></i>
+                <h3>Find Us Here</h3>
+                <p>123 Osu Oxford Street, Accra, Ghana</p>
+                <a href="https://maps.google.com/?q=Osu+Oxford+Street+Accra+Ghana" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-directions"></i> Get Directions
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+    ============================================= -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-icon">🍲</span>
+                        <span class="logo-text">Akwaaba Kitchen</span>
+                    </a>
+                    <p class="footer-description">
+                        Bringing the authentic taste of Ghana to your doorstep.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link whatsapp" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#menu">Our Menu</a></li>
+                        <li><a href="order.html">Order Food</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4 class="footer-title">Contact Us</h4>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+233240000000">+233 595323759</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/233595323759">WhatsApp Us</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:akwaabakitchen101@gmail.com">akwaabakitchen101@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">
+                    &copy; <span id="currentYear"></span> Akwaaba Kitchen. Made with ❤️ in Ghana 
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         FLOATING WHATSAPP BUTTON
+    ============================================= -->
+    <a href="#" class="whatsapp-float" id="whatsappFloat" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Chat with us!</span>
+    </a>
+
+    <!-- ============================================
+         TOAST NOTIFICATION CONTAINER
+    ============================================= -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ============================================
+         SCRIPTS
+    ============================================= -->
+    <script src="js/main.js"></script>
+    <script src="js/whatsapp.js"></script>
+    <script src="js/email-config.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>
